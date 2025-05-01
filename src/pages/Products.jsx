@@ -2,43 +2,71 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function Products() {
-    return (
+    const products = [
+        {
+          name: "Tarta de Vainilla",
+          description: "Un delicioso pastel de vainilla con crema de mantequilla.",
+          image: "/images/products/tarta_12.jpg",
+        },
+        {
+          name: "Tartitas con frutas",
+          description: "Tartitas individuales con una variedad de frutas frescas.",
+          image: "/images/products/tarta_6.jpg",
+        },
+        {
+          name: "Tarta de Frambuesa",
+          description: "Una tarta suave y cremosa, con un toque de frambuesa.",
+          image: "/images/products/tarta_13.jpg",
+        },
+        {
+          name: "Cupcakes de Chocolate",
+          description: "Deliciosos cupcakes de chocolate, perfectos para cualquier ocasión.",
+          image: "/images/products/cupcake_1.jpg",
+        },
+        {
+          name: "Tarta de Fresa",
+          description: "Tarta de fresa fresca y suave, ideal para los amantes de las fresas.",
+          image: "/images/products/tarta_7.jpg",
+        },
+        {
+          name: "Galleta de Chocolate",
+          description: "Galletas de chocolate crujientes por fuera y suaves por dentro|.",
+          image: "/images/products/galleta_1.jpg",
+        },
+      ];
+    
+      return (
         <motion.div
-            initial={{ opacity: 0 }}    // Al inicio
-            animate={{ opacity: 1 }}    // Al mostrar
-            exit={{ opacity: 0 }}       // Al salir
-            transition={{ duration: 1.5 }}
-            className="text-center py-10">
-
-            <h1 className="text-4xl font-bold text-pink-900">Nuestros Productos</h1>
-            <p className="mt-4 text-white font-bold">
-                En Rosa Pastel, ofrecemos una variedad de productos artesanales,
-                desde pasteles hasta galletas, todos hechos con ingredientes frescos y de alta calidad.
-                Cada producto es una obra maestra que refleja nuestra pasión por la repostería.
-            </p>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white p-4 rounded-lg shadow-md">
-                    <h2 className="text-xl font-bold text-pink-900">Pastel de Chocolate</h2>
-                    <p className="mt-2 text-gray-700">Un delicioso pastel de chocolate, perfecto para cualquier ocasión.</p>
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5 }}
+          className="text-center py-10 px-4 bg-pink-50 min-h-screen"
+        >
+          <h1 className="text-4xl font-bold text-pink-900 mb-4">Nuestros Productos</h1>
+          <p className="mb-10 text-pink-700 font-semibold max-w-3xl mx-auto">
+            En Rosa Pastel, ofrecemos una variedad de productos artesanales: pasteles, galletas y mucho más.
+            Cada creación es única, hecha con ingredientes frescos y mucho amor.
+          </p>
+    
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:scale-110 transform"
+              >
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="p-5">
+                  <h2 className="text-xl font-bold text-pink-800">{product.name}</h2>
+                  <p className="mt-2 text-gray-600">{product.description}</p>
                 </div>
-                <div className="bg-white p-4 rounded-lg shadow-md">
-                    <h2 className="text-xl font-bold text-pink-900">Galletas de Vainilla</h2>
-                    <p className="mt-2 text-gray-700">Galletas suaves y esponjosas con un toque de vainilla.</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-md">
-                    <h2 className="text-xl font-bold text-pink-900">Tarta de Frutas</h2>
-                    <p className="mt-2 text-gray-700">Una tarta fresca y colorida, llena de frutas de temporada.</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-md">
-                    <h2 className="text-xl font-bold text-pink-900">Cupcakes de Limón</h2>
-                    <p className="mt-2 text-gray-700">Deliciosos cupcakes de limón, perfectos para un dulce capricho.</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-md">
-                    <h2 className="text-xl font-bold text-pink-900">Brownies de Nueces</h2>
-                    <p className="mt-2 text-gray-700">Brownies ricos
-                        y húmedos, con trozos de nueces crujientes.</p>
-                </div>
-            </div>
+              </div>
+            ))}
+          </div>
         </motion.div>
-    );
+      );
 }
