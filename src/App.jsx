@@ -1,5 +1,6 @@
 import { use, useRef, useEffect, useState } from 'react'
 import { useLocation, Routes, Route } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 import { AnimatePresence } from 'framer-motion'
 import './App.css'
 import Navbar from './components/Navbar'
@@ -13,6 +14,9 @@ function App() {
   const location = useLocation()
   return (
     <div className="flex flex-col min-h-screen">
+      <Toaster
+        position="top-right"
+      />
       <Navbar />
       <main className="flex-grow px-70">
         <AnimatePresence mode='wait' >
