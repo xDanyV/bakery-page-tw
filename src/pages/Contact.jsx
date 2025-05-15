@@ -23,7 +23,7 @@ export default function Contact() {
                     <img
                         src="/images/products/tarta_6.jpg"
                         alt="Tartitas"
-                        className="w-full h-96 object-cover rounded-lg"
+                        className="w-full h-96 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
                     />
                 </div>
 
