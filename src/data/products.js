@@ -27,7 +27,44 @@ const products = [
         image: "/images/products/galleta_1.jpg",
         description: "Galleta con chispas de chocolate puro.",
 
+    }, 
+    {
+        id: 5,
+        name: "Galleta",
+        category: "Galleta",
+        image: "/images/products/galleta_2.jpg",
+        description: "Galleta deliciosa",
+    }, 
+    {
+        id: 6,
+        name: "Galleta",
+        category: "Galleta",
+        image: "/images/products/galleta_3.jpg",
+        description: "Galleta deliciosa",
+    }, 
+    {
+        id: 7,
+        name: "Cupcake",
+        category: "Cupcake",
+        image: "/images/products/cupcake_2.jpg",
+        description: "Cupcake delicioso",
+    }, 
+    {
+        id: 8,
+        name: "Cupcake",
+        category: "Cupcake",
+        image: "/images/products/cupcake_3.jpg",
+        description: "Cupcake delicioso",
+    }, 
+    {
+        id: 9,
+        name: "Galleta",
+        category: "Galleta",
+        image: "/images/products/galleta_4.jpg",
+        description: "Galleta deliciosa",
     }
+    
+
 
 ];
 
