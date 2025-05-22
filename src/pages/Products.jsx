@@ -6,7 +6,17 @@ import productsData from "../data/products"
 
 export default function Products() {
 
-  const [selectedCategory, setselectedCategory] = useState("Todos");
+  const [selectedCategory, setSelectedCategory] = useState("Todas");
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    
+  };
+
+  const filteredProducts =
+    selectedCategory === "Todas"
+      ? productsData
+      : productsData.filter((p) => p.category === selectedCategory);
 
   return (
     <motion.div
@@ -23,11 +33,11 @@ export default function Products() {
       </p>
 
       <div className=" flex items-center justify-center">
-        <Dropdown />
+        <Dropdown on onSelect={handleCategoryChange} />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {productsData.map((product, index) => (
+        {filteredProducts.map((product, index) => (
           <div
             key={index}
             className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:scale-110 transform"
@@ -37,13 +47,14 @@ export default function Products() {
               alt={product.name}
               className="w-full h-56 object-cover"
             />
-            <div className ="p-5">
-              <h2 className ="text-xl font-bold text-pink-800">{product.name}</h2>
-              <p className ="mt-2 text-pink-600">{product.description}</p>
+            <div className="p-5">
+              <h2 className="text-xl font-bold text-pink-800">{product.name}</h2>
+              <p className="mt-2 text-pink-600">{product.description}</p>
             </div>
           </div>
         ))}
       </div>
+
     </motion.div>
   );
 }
