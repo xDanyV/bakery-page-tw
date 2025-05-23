@@ -1,22 +1,32 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Dropdown from "../components/Dropdown";
-
 import productsData from "../data/products"
 
 export default function Products() {
 
   const [selectedCategory, setSelectedCategory] = useState("Todas");
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 6;
+
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    
+    setCurrentPage(1);
   };
 
   const filteredProducts =
     selectedCategory === "Todas"
       ? productsData
       : productsData.filter((p) => p.category === selectedCategory);
+
+
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+  const paginatedProducts = filteredProducts.slice(
+    (currentPage - 1) * productsPerPage,
+    currentPage * productsPerPage
+  );
+
 
   return (
     <motion.div
@@ -37,7 +47,7 @@ export default function Products() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProducts.map((product, index) => (
+        {paginatedProducts.map((product, index) => (
           <div
             key={index}
             className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:scale-110 transform"
@@ -54,6 +64,24 @@ export default function Products() {
           </div>
         ))}
       </div>
+
+      {totalPages > 1 && (
+        <div className="flex justify-center mt-10 space-x-2">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentPage(index + 1)}
+              className={`px-4 py-2 rounded-full ${
+                currentPage === index + 1
+                  ? "bg-pink-500 text-white"
+                  : "bg-pink-200 text-pink-600"
+              } hover:bg-pink-500 hover:text-white hover:cursor-pointer`}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+      )}
 
     </motion.div>
   );
