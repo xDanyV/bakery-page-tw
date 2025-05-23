@@ -25,7 +25,7 @@ const Dropdown = ({ onSelect }) => {
                 className="inline-flex justify-center w-full rounded-md 
                 border border-pink-300 shadow-sm px-4 py-2 bg-white 
                 text-sm font-medium text-pink-700 hover:bg-pink-50 
-                focus:outline-none mb-10"
+                focus:outline-none mb-10 hover:cursor-pointer"
             >
                 {selectedCategory}
                 <svg
