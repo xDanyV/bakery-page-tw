@@ -100,21 +100,6 @@ export default function Home() {
 
             </div>
 
-            {/* Botones de navegación 
-            
-            <button
-                onClick={prevSlide}
-                className="absolute hover:cursor-pointer hover:bg-white/30 top-1/2 left-0 h-full rounded-r-full transform -translate-y-1/2 bg-white/10 text-pink-700 p-3 shadow-lg z-20"
-            >
-                ❮
-            </button>
-            <button
-                onClick={nextSlide}
-                className="absolute hover:cursor-pointer hover:bg-white/30 top-1/2 right-0 h-full rounded-l-full transform -translate-y-1/2 bg-white/10 text-pink-700 p-3 shadow-lg z-20"
-            >
-                ❯
-            </button>*/}
-
             {/* Dots de navegación */}
             <div className="absolute bottom-6 w-full flex justify-center gap-2 z-20">
                 {slides.map((_, i) => (
