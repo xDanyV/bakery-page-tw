@@ -4,6 +4,7 @@ import Dropdown from "../components/Dropdown";
 import productsData from "../data/products"
 
 
+
 export default function Products() {
 
   const [selectedCategory, setSelectedCategory] = useState("Todas");
