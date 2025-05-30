@@ -33,22 +33,43 @@ export default function Contact() {
                     </h2>
                     <ul className="text-1xl space-y-4 text-lg text-pink-800 font-medium">
                         <li>
-                            <span className="font-bold">🕒 Horario:</span> Lunes a Sábado de 9:00 AM a 8:00 PM
+                            <span className="font-bold">🕒 Horario:</span> Lunes a Sábado de 9:00 AM a 10:00 PM
                         </li>
                         <li className="flex items-center gap-2">
                             <FaWhatsapp className="text-pink-800" />
-                            <span className="font-bold"> Teléfono / WhatsApp:</span>{" "}
+                            <span className="font-bold"> WhatsApp:</span>{" "}
                             <a
-                                href="https://wa.me/521234567890"
+                                href="https://wa.me/529641131396"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-pink-600 underline hover:text-pink-800"
                             >
-                                +52 123 456 7890
+                                +52 964 113 1396
+                            </a>
+                            /
+                            <a
+                                href="https://wa.me/529641375792"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-pink-600 underline hover:text-pink-800"
+                            >
+                                +52 964 137 5792
+                            </a>
+
+                        </li>
+                        <li className="flex items-center gap-2">
+                        
+                            <span className="font-bold"> 📞 Teléfono:</span>{" "}
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-pink-600 underline hover:text-pink-800"
+                            >
+                                +52 964 690 4973
                             </a>
                         </li>
                         <li className="cursor-pointer hover:text-pink-600 transition" onClick={() => {
-                            navigator.clipboard.writeText("pasteleria@example.com");
+                            navigator.clipboard.writeText("kitman128088@gmail.com");
                             toast.success("Correo copiado al portapapeles", {
                                 style: {
                                     border: '1px solid #e81a85',
@@ -61,7 +82,7 @@ export default function Contact() {
                                 },
                             });
                         }}>
-                            <span className="font-bold">📧 Correo:</span> pasteleria@example.com
+                            <span className="font-bold">📧 Correo:</span> kitman128088@gmail.com
                         </li>
                         <li>
                             <span className="font-bold">📍 Dirección:</span> Central Sur 27, entre calle Allende y Belizario Domínguez, Fonhapo, 30640 Huixtla, Chis.
