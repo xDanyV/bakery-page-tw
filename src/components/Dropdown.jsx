@@ -9,8 +9,10 @@ const Dropdown = ({ onSelect }) => {
     const categoryIcons = {
         "Todas": HiMiniSquares2X2,
         "Tartas": HiMiniCake,
+        "Personalizado": HiMiniCake,
         "Cupcake": RiCake3Line,
         "Galleta": TbCookieFilled,
+        "Crepa": HiMiniSquares2X2,
         "Bebidas": RiDrinks2Fill,
     };
 
@@ -61,9 +63,10 @@ const Dropdown = ({ onSelect }) => {
 
 
             {isOpen && (
-                <div className="absolute right-0 mt-2 w-56 bottom-full mb-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                //La linea siguiente me ayuda a posicionar el menu Dropdown
+                <div className="absolute top-full  w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                     <div className="py-1">
-                        {["Todas", "Tartas", "Cupcake", "Galleta", "Bebidas"].map((cat) => (
+                        {["Todas", "Tartas", "Personalizado", "Cupcake", "Galleta", "Crepa", "Bebidas"].map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => handleSelect(cat)}

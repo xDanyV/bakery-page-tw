@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Dropdown from "../components/Dropdown";
 import productsData from "../data/products"
 
-
-
 export default function Products() {
 
   const [selectedCategory, setSelectedCategory] = useState("Todas");
@@ -23,6 +21,7 @@ export default function Products() {
       : productsData.filter((p) => p.category === selectedCategory);
 
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+  
   const paginatedProducts = filteredProducts.slice(
     (currentPage - 1) * productsPerPage,
     currentPage * productsPerPage
@@ -43,7 +42,7 @@ export default function Products() {
       </p>
 
       <div className=" flex items-center justify-center">
-        <Dropdown on onSelect={ handleCategoryChange } />
+        <Dropdown on onSelect={handleCategoryChange} />
       </div>
 
       <motion.div
