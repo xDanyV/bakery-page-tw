@@ -5,8 +5,9 @@ export default function Navbar() {
     return (
         <nav className="sticky top-0 z-50 bg-white shadow-md p-4">
             <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-                <a href="/" className="block w-20">
-                    <img src="/images/icons/logo rosapastel 1.png" alt="Rosa Pastel" className="w-full h-auto" />
+                <a href="/" className="text-pink-700 font-bold text-3xl hover:scale-110 transition-all duration-500 ease-in-out leading-tight block">
+                    Rosa Pastel
+                    <span className="block text-base font-bold text-right">Alta Repostería</span>
                 </a>
                 <ul className="hidden md:flex space-x-6">
                     <li>
