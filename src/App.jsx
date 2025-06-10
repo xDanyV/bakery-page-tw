@@ -18,7 +18,7 @@ function App() {
         position="top-right"
       />
       <Navbar />
-      <main className="flex-grow px-70">
+      <main className="flex-grow lg:px-50"> 
         <AnimatePresence mode='wait' >
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
