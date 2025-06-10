@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { TbCake } from "react-icons/tb";
 import { LuCakeSlice, LuCake } from 'react-icons/lu';
 import { RiCake3Fill, RiCake3Line, RiCakeLine } from 'react-icons/ri';
+import { Carousel, Typography, Button } from "@material-tailwind/react";
 
 const slides = [
     {
@@ -30,8 +31,6 @@ const slides = [
         link: "/about"
     }
 ];
-
-
 
 export default function Home() {
     const [index, setIndex] = useState(0);
@@ -70,7 +69,13 @@ export default function Home() {
     const slide = slides[index];
 
     return (
-        <div className="">
+        <motion.div
+            initial={{ opacity: 0 }}    // Al inicio
+            animate={{ opacity: 1 }}    // Al mostrar
+            exit={{ opacity: 0 }}       // Al salir
+            transition={{ duration: 1.5 }}
+            className="text-center bg-pink-50 min-h-screen ">
+
             {/* Imagen con transición */}
             <AnimatePresence mode="wait">
                 <motion.img
@@ -81,12 +86,13 @@ export default function Home() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1, ease: 'easeInOut' }}
-                    className="inset-0 w-full object-cover h-150"
+                    className="w-full object-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
                 />
+
             </AnimatePresence>
 
             {/* Contenido flotante */}
-            <div className="absolute inset-0  flex flex-col items-center justify-center text-white px-4 text-center ">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6 sm:px-12 text-center">
                 <div className='bg-black/10 rounded-4xl p-5'>
                     <h1 className="text-4xl md:text-6xl font-bold mb-4">{slide.title}</h1>
                     <p className="text-lg md:text-2xl mb-6">{slide.description}</p>
@@ -101,9 +107,11 @@ export default function Home() {
             </div>
 
             {/* Dots de navegación */}
-            <div className="absolute bottom-6 w-full flex justify-center gap-2 z-20">
+            <div className="bottom-6 w-full flex flex-wrap justify-center gap-2 z-20 px-4">
+
                 {slides.map((_, i) => (
-                    <button
+                    <Button
+                        size='sm'
                         key={i}
                         onClick={() => goToSlide(i)}
                         className={`hover:cursor-pointer w-3 h-3 rounded-full transition ${i === index ? 'bg-pink-600 scale-125' : 'bg-white/70'
@@ -111,15 +119,16 @@ export default function Home() {
                     />
                 ))}
             </div>
-            <div className='text-center py-10 px-4 bg-pink-50'>
 
+            <div className='text-center py-10 px-4 bg-pink-50'>
                 <h1 className="text-4xl font-bold text-pink-900 mb-4">Sobre nosotros</h1>
                 <p className="mb-10 text-pink-700 font-semibold max-w-3xl mx-auto">
                     Bienvenidos a Rosa Pastel, una pastelería artesanal dedicada a endulzar los momentos
                     más especiales de tu vida. Desde nuestros inicios, nos hemos comprometido con la calidad,
                     la creatividad y la pasión por la repostería, ofreciendo productos frescos, deliciosos y hechos con amor.
                 </p>
-                <div className='flex flex-col md:flex-row mt-10 bg-pink-100 rounded-lg p-5'>
+
+                <div className='flex flex-col md:flex-row gap-6 bg-pink-100 rounded-lg p-4 md:p-6'>
                     <div className='md:w-2/3'>
                         <h2 className="text-2xl font-bold text-pink-800 mb-6 border-b border-pink-300 pb-2">
                             Nuestra Fundación
@@ -137,7 +146,7 @@ export default function Home() {
                         <img
                             src="/images/products/tarta_6.jpg"
                             alt="Tartitas"
-                            className="w-full h-60 object-cover hover:scale-105 rounded-lg"
+                            className="w-full h-52 sm:h-60 md:h-72 object-cover hover:scale-105 rounded-lg transition-transform duration-300"
                         />
                     </div>
                 </div>
@@ -147,7 +156,7 @@ export default function Home() {
                         <img
                             src="/images/products/tarta_3.jpg"
                             alt="Tartitas"
-                            className="w-full h-60 hover:scale-105 object-cover rounded-lg"
+                            className="w-full h-52 sm:h-60 md:h-72 object-cover hover:scale-105 rounded-lg transition-transform duration-300"
                         />
                     </div>
                     <div className='md:w-2/3'>
@@ -159,10 +168,10 @@ export default function Home() {
                             de alta calidad, elaborados con ingredientes seleccionados y con un servicio cálido
                             y personalizado que refleje nuestra pasión por lo que hacemos.
                         </p>
-
                     </div>
                 </div>
-                <div className='flex flex-col md:flex-row mt-10 bg-pink-100 rounded-lg p-5'>
+
+                <div className='flex flex-col md:flex-row gap-6 bg-pink-100 rounded-lg p-4 md:p-6'>
                     <div className='md:w-2/3'>
                         <h2 className="text-2xl font-bold text-pink-800 mb-6 border-b border-pink-300 pb-2">
                             Visión
@@ -171,52 +180,44 @@ export default function Home() {
                             Ser reconocidos como una de las mejores pastelerías artesanales a nivel regional,
                             destacando por nuestra innovación, compromiso con la calidad y cercanía con nuestros clientes.
                         </p>
-
                     </div>
-                    <div className="md:w-1/3  p-4 m-2 ">
+                    <div className="md:w-1/3 p-2">
                         <img
                             src="/images/products/galleta_1.jpg"
                             alt="Tartitas"
-                            className="w-full h-60 object-cover hover:scale-105 rounded-lg"
+                            className="w-full h-52 sm:h-60 md:h-72 object-cover hover:scale-105 rounded-lg transition-transform duration-300"
                         />
                     </div>
                 </div>
-                <h2 className="text-2xl font-bold text-pink-800  border-pink-300 pt-10">
-                        Nuestros Valores
-                    </h2>
-                <div className='flex md:flex-row mt-10 w-200 ml-15 bg-pink-100 rounded-lg p-5'>
-                    
-                    <div className='grid w-full gap-4 grid-flow-col grid-rows-2 grid-cols-2'>
-                        <div className='bg-pink-200 pt-4 font-medium hover:scale-110 transition-transform duration-300 rounded-2xl text-pink-800 flex flex-col items-center justify-center h-28 w-60'>
-                            <TbCake className="text-6xl mb-2" />
-                            <span className='pb-3'>Calidad</span>
-                        </div>
-                        <div className='bg-pink-200 pt-4 font-medium hover:scale-110 transition-transform duration-300 rounded-2xl text-pink-800 flex flex-col items-center justify-center h-28 w-60'>
-                            <LuCakeSlice className="text-6xl mb-2" />
-                            <span className='pb-3'>Pasión</span>
-                        </div>
-                        <div className='bg-pink-200 pt-4 font-medium hover:scale-110 transition-transform duration-300 rounded-2xl text-pink-800 flex flex-col items-center justify-center h-28 w-60'>
-                            <LuCake className="text-6xl mb-2" />
-                            <span className='pb-3'>Creatividad</span>
-                        </div>
-                        <div className='bg-pink-200 pt-4 font-medium hover:scale-110 transition-transform duration-300 rounded-2xl text-pink-800 flex flex-col items-center justify-center h-28 w-60'>
-                            <RiCake3Fill className="text-6xl mb-2" />
-                            <span className='pb-3'>Compromiso</span>
-                        </div>
-                        <div className='bg-pink-200 pt-4 font-medium hover:scale-110 transition-transform duration-300 rounded-2xl text-pink-800 flex flex-col items-center justify-center h-28 w-60'>
-                            <RiCake3Line className="text-6xl mb-2" />
-                            <span className='pb-3'>Honestidad</span>
-                        </div>
-                        <div className='bg-pink-200 pt-4 font-medium hover:scale-110 transition-transform duration-300 rounded-2xl text-pink-800 flex flex-col items-center justify-center h-28 w-60'>
-                            < RiCakeLine className="text-6xl mb-2" />
-                            <span className='pb-3'>Respeto</span>
-                        </div>
 
+                <h2 className="text-2xl font-bold text-pink-800  border-pink-300 pt-10">
+                    Nuestros Valores
+                </h2>
+
+                <div className="flex justify-center bg-pink-100 py-10 px-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-screen-xl w-full">
+                        {[
+                            { icon: <TbCake className="text-6xl mb-2" />, label: 'Calidad' },
+                            { icon: <LuCakeSlice className="text-6xl mb-2" />, label: 'Pasión' },
+                            { icon: <LuCake className="text-6xl mb-2" />, label: 'Creatividad' },
+                            { icon: <RiCake3Fill className="text-6xl mb-2" />, label: 'Compromiso' },
+                            { icon: <RiCake3Line className="text-6xl mb-2" />, label: 'Honestidad' },
+                            { icon: <RiCakeLine className="text-6xl mb-2" />, label: 'Respeto' },
+                        ].map((item, index) => (
+                            <div
+                                key={index}
+                                className="bg-pink-200 pt-4 font-medium text-center hover:scale-105 transition-transform duration-300 rounded-2xl text-pink-800 flex flex-col items-center justify-center h-32 w-full shadow-md"
+                            >
+                                {item.icon}
+                                <span className="pb-3">{item.label}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
+
             </div>
-        </div>
+        </motion.div>
 
     );
 }

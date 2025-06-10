@@ -21,7 +21,7 @@ export default function Products() {
       : productsData.filter((p) => p.category === selectedCategory);
 
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-  
+
   const paginatedProducts = filteredProducts.slice(
     (currentPage - 1) * productsPerPage,
     currentPage * productsPerPage
