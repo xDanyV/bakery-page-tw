@@ -8,7 +8,7 @@ export default function About() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
-            className="bg-pink-50 min-h-screen py-16 px-6 flex flex-col items-center"
+            className="bg-pink-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center"
         >
             <div className="max-w-6xl w-full flex flex-col lg:flex-row items-center gap-10">
                 {/* Imagen izquierda */}
@@ -16,14 +16,14 @@ export default function About() {
                     <img
                         src="/images/products/tarta_1.jpg"
                         alt="Interior de la pastelería"
-                        className="w-full h-64 lg:h-auto object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-64 sm:h-80 md:h-96 lg:h-auto object-cover hover:scale-105 transition-transform duration-300"
                     />
                 </div>
 
                 {/* Texto */}
-                <div className="w-full lg:w-1/2 text-pink-800 text-lg leading-relaxed font-medium">
-                    <h1 className=" text-5xl font-bold text-pink-900 mb-8 text-left">Sobre Nosotros</h1>
-                    <p className="mb-6">
+                <div className="w-full lg:w-1/2 text-pink-800 text-base sm:text-lg leading-relaxed font-medium">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-pink-900 mb-6 text-left">Sobre Nosotros</h1>
+                    <p className="mb-4">
                         En <span className="font-bold text-pink-900">Rosa Pastel</span>, nos dedicamos a crear delicias artesanales con amor y dedicación.
                         Cada uno de nuestros productos es elaborado cuidadosamente para brindar una experiencia única en cada bocado.
                     </p>
@@ -34,40 +34,40 @@ export default function About() {
                 </div>
             </div>
 
-            {/* Imagen inferior opcional */}
+            {/* Imagen inferior */}
             <div className="mt-12 max-w-4xl w-full rounded-lg overflow-hidden shadow-lg">
                 <img
                     src="/images/interior/interior_1.jpg"
                     alt="Equipo de trabajo"
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full object-cover hover:scale-105 transition-transform duration-300"
                 />
             </div>
 
             {/* Nuestro equipo */}
-            <div className="mt-20 max-w-6xl w-full text-center">
-                <h2 className="text-4xl font-bold text-pink-900 mb-12">Nuestro Equipo</h2>
+            <div className="mt-20 max-w-6xl w-full text-center px-4">
+                <h2 className="text-3xl sm:text-4xl font-bold text-pink-900 mb-10">Nuestro Equipo</h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Miembro 1 */}
-                    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
-                        <img src="/images/employees/employee.jpg" alt="Chef Ana" className="w-32 h-32 mx-auto rounded-full object-cover mb-4" />
-                        <h3 className="text-xl font-semibold text-pink-800">Ana Ramírez</h3>
+                    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition duration-300">
+                        <img src="/images/employees/employee.jpg" alt="Chef Ana" className="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-full object-cover mb-4" />
+                        <h3 className="text-lg sm:text-xl font-semibold text-pink-800">Ana Ramírez</h3>
                         <p className="text-pink-700">Chef Pastelera</p>
                         <p className="text-sm text-gray-500 mt-2">Especialista en decoración y sabores únicos que hacen cada pastel inolvidable.</p>
                     </div>
 
                     {/* Miembro 2 */}
-                    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
-                        <img src="/images/employees/employee_1.jpg" alt="Carlos López" className="w-32 h-32 mx-auto rounded-full object-cover mb-4" />
-                        <h3 className="text-xl font-semibold text-pink-800">Carlos López</h3>
+                    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition duration-300">
+                        <img src="/images/employees/employee_1.jpg" alt="Carlos López" className="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-full object-cover mb-4" />
+                        <h3 className="text-lg sm:text-xl font-semibold text-pink-800">Carlos López</h3>
                         <p className="text-pink-700">Encargado de Producción</p>
                         <p className="text-sm text-gray-500 mt-2">Asegura que cada producto mantenga nuestros estándares de calidad y frescura.</p>
                     </div>
 
                     {/* Miembro 3 */}
-                    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
-                        <img src="/images/employees/employee_2.jpg" alt="Laura Méndez" className="w-32 h-32 mx-auto rounded-full object-cover mb-4" />
-                        <h3 className="text-xl font-semibold text-pink-800">Laura Méndez</h3>
+                    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition duration-300">
+                        <img src="/images/employees/employee_2.jpg" alt="Laura Méndez" className="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-full object-cover mb-4" />
+                        <h3 className="text-lg sm:text-xl font-semibold text-pink-800">Laura Méndez</h3>
                         <p className="text-pink-700">Atención al Cliente</p>
                         <p className="text-sm text-gray-500 mt-2">Siempre lista para ayudarte a elegir el postre perfecto para cada ocasión.</p>
                     </div>
@@ -76,27 +76,22 @@ export default function About() {
 
             {/* Video representativo */}
             <div className="mt-20 max-w-6xl w-full text-center px-4">
-                <h2 className="text-4xl font-bold text-pink-900 mb-8">Así trabajamos en Rosa Pastel</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold text-pink-900 mb-8">Así trabajamos en Rosa Pastel</h2>
 
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                    <video
-                        className="w-full h-auto"
-                        autoPlay
-                        muted
-                        loop
-                    >
+                    <video className="w-full h-auto" autoPlay muted loop>
                         <source src="/videos/cookies.mp4" type="video/mp4" />
                         Tu navegador no soporta el video.
                     </video>
                 </div>
             </div>
 
-            <div className="max-w-6xl w-full flex flex-col lg:flex-row items-center gap-10 pt-10">
-
+            {/* Segunda sección "Sobre Nosotros" */}
+            <div className="max-w-6xl w-full flex flex-col-reverse lg:flex-row items-center gap-10 pt-12 px-4">
                 {/* Texto */}
-                <div className="w-full lg:w-1/2 text-pink-800 text-lg leading-relaxed font-medium">
-                    <h1 className=" text-5xl font-bold text-pink-900 mb-8 text-left">Sobre Nosotros</h1>
-                    <p className="mb-6">
+                <div className="w-full lg:w-1/2 text-pink-800 text-base sm:text-lg leading-relaxed font-medium">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-pink-900 mb-6 text-left">Sobre Nosotros</h1>
+                    <p className="mb-4">
                         En <span className="font-bold text-pink-900">Rosa Pastel</span>, no solo horneamos postres, también cultivamos comunidad. Nuestro local es un espacio
                         donde cada cliente es bienvenido como parte de la familia.
                     </p>
@@ -111,13 +106,11 @@ export default function About() {
                     <img
                         src="/images/interior/interior_2.jpg"
                         alt="Interior de la pastelería"
-                        className="w-full h-64 lg:h-auto object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-64 sm:h-80 md:h-96 lg:h-auto object-cover hover:scale-105 transition-transform duration-300"
                     />
                 </div>
-
             </div>
-
-
         </motion.div>
+
     );
 }
