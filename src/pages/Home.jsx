@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { TbCake } from "react-icons/tb";
 import { LuCakeSlice, LuCake } from 'react-icons/lu';
 import { RiCake3Fill, RiCake3Line, RiCakeLine } from 'react-icons/ri';
-import { Carousel, Typography, Button } from "@material-tailwind/react";
 
 const slides = [
     {
@@ -110,7 +109,7 @@ export default function Home() {
             <div className="bottom-6 w-full flex flex-wrap justify-center gap-2 z-20 px-4">
 
                 {slides.map((_, i) => (
-                    <Button
+                    <button
                         size='sm'
                         key={i}
                         onClick={() => goToSlide(i)}
@@ -206,7 +205,7 @@ export default function Home() {
                         ].map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-pink-200 pt-4 font-medium text-center hover:scale-105 transition-transform duration-300 rounded-2xl text-pink-800 flex flex-col items-center justify-center h-32 w-full shadow-md"
+                                className="bg-pink-200  pt-4 font-medium text-center hover:scale-105 transition-transform duration-300 rounded-2xl text-pink-800 flex flex-col items-center justify-center h-32  w-full shadow-md"
                             >
                                 {item.icon}
                                 <span className="pb-3">{item.label}</span>

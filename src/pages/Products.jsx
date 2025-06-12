@@ -73,7 +73,7 @@ export default function Products() {
       </motion.div>
 
       {totalPages > 1 && (
-        <div className="flex justify-center mt-10 space-x-2">
+        <div className="flex justify-center mt-10 ">
           {Array.from({ length: totalPages }, (_, index) => (
             <button
               key={index}
